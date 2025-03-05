@@ -2,26 +2,29 @@ package com.example.polizasliver.presentation.splash
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivitySplashScreenBinding
 import com.example.polizasliver.presentation.home.HomeInsurance
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class SplashScreen : AppCompatActivity() {
+class SplashScreen : AppCompatActivity(), SplashInterface {
     private lateinit var binding: ActivitySplashScreenBinding
+    val viewModel: SplashScreenViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        viewModel.onCreate()
+
+    }
+
+    override fun goHome() {
+        var intent = Intent(this@SplashScreen, HomeInsurance::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
     }
 }

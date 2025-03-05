@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Polizas Liver</string>
+    <string name="not_insurance">Aún no cuentas con pólizas contratadas</string>
 </resources>

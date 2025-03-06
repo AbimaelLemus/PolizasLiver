@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityDataPersonalBinding
 import com.example.polizasliver.databinding.ActivityHomeInsuranceBinding
+import com.example.polizasliver.ui.insurance.Insurance
 import com.example.polizasliver.ui.type_insurance.TypeInsurance
 
 class DataPersonalActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class DataPersonalActivity : AppCompatActivity() {
         }
 
         binding.btnDataPersonal.setOnClickListener {
-            startActivity(Intent(this@DataPersonalActivity, TypeInsurance::class.java))
+            startActivity(Intent(this@DataPersonalActivity, Insurance::class.java))
         }
     }
 }

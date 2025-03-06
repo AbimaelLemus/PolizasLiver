@@ -1,4 +1,4 @@
-package com.example.polizasliver.presentation.insurance
+package com.example.polizasliver.ui.insurance
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

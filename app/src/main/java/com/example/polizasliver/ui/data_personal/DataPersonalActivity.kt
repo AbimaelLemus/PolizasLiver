@@ -1,4 +1,4 @@
-package com.example.polizasliver.presentation.home
+package com.example.polizasliver.ui.data_personal
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,17 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
+import com.example.polizasliver.databinding.ActivityDataPersonalBinding
 import com.example.polizasliver.databinding.ActivityHomeInsuranceBinding
-import com.example.polizasliver.presentation.detail.Detail
-import com.example.polizasliver.presentation.insurance.Insurance
-import com.example.polizasliver.presentation.type_insurance.TypeInsurance
+import com.example.polizasliver.ui.type_insurance.TypeInsurance
 
-class HomeInsurance : AppCompatActivity() {
-    private lateinit var binding: ActivityHomeInsuranceBinding
+class DataPersonalActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityDataPersonalBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityDataPersonalBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        binding = ActivityHomeInsuranceBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -25,13 +24,8 @@ class HomeInsurance : AppCompatActivity() {
             insets
         }
 
-        binding.fabHome.setOnClickListener {
-            startActivity(Intent(this@HomeInsurance, TypeInsurance::class.java))
+        binding.btnDataPersonal.setOnClickListener {
+            startActivity(Intent(this@DataPersonalActivity, TypeInsurance::class.java))
         }
-
-        binding.iHome.cvHome.setOnClickListener {
-            startActivity(Intent(this@HomeInsurance, Detail::class.java))
-        }
-
     }
 }

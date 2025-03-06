@@ -1,35 +1,24 @@
-package com.example.polizasliver.presentation.type_insurance
+package com.example.polizasliver.ui.detail
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
-import com.example.polizasliver.databinding.ActivityTypeInsuranceBinding
-import com.example.polizasliver.presentation.insurance.Insurance
+import com.example.polizasliver.databinding.ActivityDetailBinding
 
-class TypeInsurance : AppCompatActivity() {
-    private lateinit var binding: ActivityTypeInsuranceBinding
-    private val TAG = TypeInsurance::class.java.simpleName
+class Detail : AppCompatActivity() {
+    private lateinit var binding: ActivityDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityTypeInsuranceBinding.inflate(layoutInflater)
+        binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding.llTypeInsurance.setOnClickListener {
-            Log.e(TAG, "onCreate: ")
-            startActivity(Intent(this@TypeInsurance, Insurance::class.java))
-        }
-
-
     }
 }

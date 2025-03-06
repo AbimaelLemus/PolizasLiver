@@ -1,4 +1,4 @@
-package com.example.polizasliver.presentation.splash
+package com.example.polizasliver.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.polizasliver.databinding.ActivitySplashScreenBinding
-import com.example.polizasliver.presentation.home.HomeInsurance
+import com.example.polizasliver.ui.home.HomeInsurance
 
 class SplashScreen : AppCompatActivity(), SplashInterface {
     private lateinit var binding: ActivitySplashScreenBinding

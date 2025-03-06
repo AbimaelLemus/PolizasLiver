@@ -10,7 +10,9 @@ import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityHomeInsuranceBinding
 import com.example.polizasliver.ui.detail.DetailActivity
 import com.example.polizasliver.ui.type_insurance.TypeInsuranceActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeInsuranceActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeInsuranceBinding
     override fun onCreate(savedInstanceState: Bundle?) {

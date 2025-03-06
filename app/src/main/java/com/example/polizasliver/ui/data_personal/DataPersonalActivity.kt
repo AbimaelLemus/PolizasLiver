@@ -9,7 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityDataPersonalBinding
 import com.example.polizasliver.ui.insurance.TakeOutInsuranceActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DataPersonalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDataPersonalBinding
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -7,7 +7,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.polizasliver.databinding.ActivitySplashScreenBinding
 import com.example.polizasliver.ui.home.HomeInsuranceActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashScreen : AppCompatActivity(), SplashInterface {
     private lateinit var binding: ActivitySplashScreenBinding
     val viewModel: SplashScreenViewModel by viewModels()

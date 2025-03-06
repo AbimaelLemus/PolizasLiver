@@ -9,7 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityTypeInsuranceBinding
 import com.example.polizasliver.ui.data_personal.DataPersonalActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TypeInsuranceActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTypeInsuranceBinding
     private val TAG = TypeInsuranceActivity::class.java.simpleName

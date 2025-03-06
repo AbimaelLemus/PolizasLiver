@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PolizasLiver"
         tools:targetApi="31">
+
+        <activity
+            android:name=".presentation.insurance.Insurance"
+            android:exported="false" />
         <activity
             android:name=".presentation.type_insurance.TypeInsurance"
             android:exported="false" />

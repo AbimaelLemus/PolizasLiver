@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Polizas Liver</string>
     <string name="not_insurance">Aún no cuentas con pólizas contratadas</string>
+    <string name="insurance">Póliza # </string>
+    <string name="protected_since">Protegido desde: </string>
+    <string name="protected_up_to">Hasta: </string>
+    <string name="date_format">--/--/---- </string>
+    <string name="cancel_insurance">Cancelar póliza</string>
+    <string name="no_insurance">000001</string>
+    <string name="description">Descripción :</string>
+    <string name="insurance_xxx">Poliza XXX</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat</string>
 </resources>

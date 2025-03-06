@@ -1,15 +1,19 @@
 package com.example.polizasliver.presentation.type_insurance
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityTypeInsuranceBinding
+import com.example.polizasliver.presentation.insurance.Insurance
 
 class TypeInsurance : AppCompatActivity() {
     private lateinit var binding: ActivityTypeInsuranceBinding
+    private val TAG = TypeInsurance::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,5 +24,12 @@ class TypeInsurance : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding.llTypeInsurance.setOnClickListener {
+            Log.e(TAG, "onCreate: ")
+            startActivity(Intent(this@TypeInsurance, Insurance::class.java))
+        }
+
+
     }
 }

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.polizasliver.databinding.ActivityInsuranceBinding
 
-class Insurance : AppCompatActivity() {
+class TakeOutInsuranceActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInsuranceBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

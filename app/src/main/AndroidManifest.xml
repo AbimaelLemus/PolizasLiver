@@ -16,13 +16,13 @@
             android:name=".ui.data_personal.DataPersonalActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.insurance.Insurance"
+            android:name=".ui.insurance.TakeOutInsuranceActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.type_insurance.TypeInsurance"
+            android:name=".ui.type_insurance.TypeInsuranceActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.detail.Detail"
+            android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashScreen"
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.home.HomeInsurance"
+            android:name=".ui.home.HomeInsuranceActivity"
             android:exported="false" />
     </application>
 

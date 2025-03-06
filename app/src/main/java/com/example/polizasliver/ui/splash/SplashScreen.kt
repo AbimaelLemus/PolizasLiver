@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.polizasliver.databinding.ActivitySplashScreenBinding
-import com.example.polizasliver.ui.home.HomeInsurance
+import com.example.polizasliver.ui.home.HomeInsuranceActivity
 
 class SplashScreen : AppCompatActivity(), SplashInterface {
     private lateinit var binding: ActivitySplashScreenBinding
@@ -28,7 +28,7 @@ class SplashScreen : AppCompatActivity(), SplashInterface {
     }
 
     override fun goHome() {
-        var intent = Intent(this@SplashScreen, HomeInsurance::class.java)
+        var intent = Intent(this@SplashScreen, HomeInsuranceActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)

@@ -57,7 +57,8 @@ class DialogsAlerts() {
         message: String,
         cancelable: Boolean,
         buttomPositive: String,
-        buttomNegative: String
+        buttomNegative: String,
+        callback: (() -> Unit)
     ) {
         val warningAlert = AlertDialog.Builder(context).create()
         warningAlert.setTitle(tittle)
@@ -67,6 +68,7 @@ class DialogsAlerts() {
             AlertDialog.BUTTON_POSITIVE,
             buttomPositive
         ) { dialog, which ->
+            callback.invoke()
             warningAlert.dismiss()
         }
 

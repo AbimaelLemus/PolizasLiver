@@ -2,6 +2,7 @@
     <string name="app_name">Polizas Liver</string>
     <string name="not_insurance">Aún no cuentas con pólizas contratadas</string>
     <string name="insurance">Póliza # </string>
+    <string name="insurance_for">Póliza para: </string>
     <string name="protected_since">Protegido desde: </string>
     <string name="protected_up_to">Hasta: </string>
     <string name="date_format">--/--/---- </string>
@@ -35,4 +36,17 @@
     <string name="desc_auto_insurance">El seguro de auto es un contrato que protege al conductor, a sus acompañantes y al vehículo de los riesgos que implica conducir. </string>
     <string name="desc_pets_insurance">El seguro veterinario o seguro de salud para mascotas, es un tipo de seguro de salud, orientado a mascotas y otros animales domésticos</string>
     <string name="desc_phone_insurance">El seguro de teléfono móvil cubre el coste de reemplazar o reparar su teléfono móvil si es robado, perdido o dañado .</string>
+
+    <string name="adds_beneficiary">"Añade un beneficiario"</string>
+    <string name="adds_direction">"Añade una dirección"</string>
+    <string name="adds_emergency_name">"Añade una contacto de emergencia"</string>
+    <string name="adds_cp">"Añade un cp"</string>
+    <string name="adds_phone">"Añade un  #telefonico</string>
+
+    <string name="less_five">"El cp no puede ser menor a 5"</string>
+    <string name="less_ten">"El #telefónico no puede ser menor a 10"</string>
+
+    <string name="cancel_process_take_insurance">Al regresar perderás el proceso de contratación</string>
+
+
 </resources>

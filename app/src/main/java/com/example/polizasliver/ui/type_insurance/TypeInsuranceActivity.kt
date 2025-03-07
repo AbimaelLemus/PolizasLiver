@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TypeInsuranceActivity : AppCompatActivity(), CardTypeInterface {
     private lateinit var binding: ActivityTypeInsuranceBinding
-    val viewModel: TypeInsuranceViewModel by viewModels()
+    private val viewModel: TypeInsuranceViewModel by viewModels()
     private val TAG = TypeInsuranceActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

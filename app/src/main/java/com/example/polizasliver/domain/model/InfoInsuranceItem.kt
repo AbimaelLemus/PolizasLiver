@@ -3,15 +3,15 @@ package com.example.polizasliver.domain.model
 import com.example.polizasliver.data.database.entities.InfoInsuranceEntity
 
 data class InfoInsuranceItem(
-    val noInsurance: Double,
-    val nameInsurance: String,
+    var noInsurance: String,
+    var nameInsurance: String,
 
-    val clientsName: String,
-    val direction: String,
-    val cp: Int,
-    val phone: Double,
-    val emergencyContact: String,
-    val emergencyPhone: Double
+    var clientsName: String,
+    var direction: String,
+    var cp: String,
+    var phone: String,
+    var emergencyContact: String,
+    var emergencyPhone: String
 )
 
 fun InfoInsuranceEntity.toDomain() = InfoInsuranceItem(

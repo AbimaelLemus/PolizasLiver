@@ -11,7 +11,10 @@ import com.example.polizasliver.databinding.DialogSuccessBinding
 
 class DialogsAlerts() {
 
-    fun succesDialog(context: Context) {
+    fun succesDialog(
+        context: Context,
+        callback: (() -> Unit)
+    ) {
         val binding: DialogSuccessBinding =
             DialogSuccessBinding.inflate(LayoutInflater.from(context))
         var dialogSuccess = Dialog(context)
@@ -21,6 +24,7 @@ class DialogsAlerts() {
         dialogSuccess.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
 
         binding.btnDialogSuccess.setOnClickListener {
+            callback.invoke()
             dialogSuccess.dismiss()
         }
 

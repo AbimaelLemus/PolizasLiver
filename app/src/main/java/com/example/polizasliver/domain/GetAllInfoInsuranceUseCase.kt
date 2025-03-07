@@ -8,7 +8,6 @@ class GetAllInfoInsuranceUseCase @Inject constructor(
     private val repository: InsuranceRepository
 ) {
 
-    //devuelve todos las polizas
     suspend operator fun invoke(): List<InfoInsuranceItem>? {
         val result = repository.getAllInfoInsurance()
         if (result.isNotEmpty()) {

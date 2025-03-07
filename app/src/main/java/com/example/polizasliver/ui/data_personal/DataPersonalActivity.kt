@@ -2,13 +2,13 @@ package com.example.polizasliver.ui.data_personal
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.polizasliver.R
-import com.example.polizasliver.data.model.DataForTakeInsurance
 import com.example.polizasliver.data.model.Utils
 import com.example.polizasliver.databinding.ActivityDataPersonalBinding
 import com.example.polizasliver.ui.dialogs_alerts.DialogsAlerts
@@ -119,14 +119,13 @@ class DataPersonalActivity : AppCompatActivity() {
         }
         viewModel.goTakeInsurance.observe(this) { dataForTakeInsurance ->
             val intent = Intent(this@DataPersonalActivity, TakeOutInsuranceActivity::class.java)
-            val mBundle = Bundle()
-            mBundle.putString(Utils.KEY_BENEFICIARY, dataForTakeInsurance.beneficiary)
-            mBundle.putString(Utils.KEY_DIRECTION, dataForTakeInsurance.direcion)
-            mBundle.putString(Utils.KEY_CP, dataForTakeInsurance.cp)
-            mBundle.putString(Utils.KEY_PHONE, dataForTakeInsurance.phone)
-            mBundle.putString(Utils.KEY_ENAME, dataForTakeInsurance.EName)
-            mBundle.putString(Utils.KEY_EPHONE, dataForTakeInsurance.EPhone)
-            intent.putExtras(mBundle)
+            intent.putExtra("KEY_TYPE_POSITION", dataForTakeInsurance.position.toString())
+            intent.putExtra("KEY_BENEFICIARY", dataForTakeInsurance.beneficiary)
+            intent.putExtra("KEY_DIRECTION", dataForTakeInsurance.direcion)
+            intent.putExtra("KEY_CP", dataForTakeInsurance.cp)
+            intent.putExtra("KEY_PHONE", dataForTakeInsurance.phone)
+            intent.putExtra("KEY_ENAME", dataForTakeInsurance.EName)
+            intent.putExtra("KEY_EPHONE", dataForTakeInsurance.EPhone)
             startActivity(intent)
         }
     }

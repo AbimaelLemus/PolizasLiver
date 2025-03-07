@@ -14,7 +14,7 @@ class InsuranceRepository @Inject constructor(
         return response.map { it.toDomain() }
     }
 
-    suspend fun insertInfoClient(infoInsurance: List<InfoInsuranceEntity>) {
+    suspend fun insertInfoClient(infoInsurance: InfoInsuranceEntity) {
         insuranceDao.insertInfoInsurance(infoInsurance)
     }
 

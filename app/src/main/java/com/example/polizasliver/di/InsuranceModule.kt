@@ -20,7 +20,7 @@ object InsuranceModule {
     fun provideRoom(@ApplicationContext context: Context) =
         Room
             .databaseBuilder(
-                context,
+                context.applicationContext,
                 InsuranceDatabase::class.java,
                 INSURANCE_DATABASE
             ).build()
@@ -28,4 +28,5 @@ object InsuranceModule {
     @Singleton
     @Provides
     fun provideInsuranceDao(db: InsuranceDatabase) = db.getInfoInsuranceDao()
+
 }

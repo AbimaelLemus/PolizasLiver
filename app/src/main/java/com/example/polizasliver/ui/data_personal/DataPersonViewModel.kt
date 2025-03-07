@@ -32,19 +32,19 @@ class DataPersonViewModel @Inject constructor() : ViewModel() {
         typeInsurance.postValue(
             when (position) {
                 1 -> {
-                    TypeInsuranceEnum.AUTO.name
+                    TypeInsuranceEnum.MASCOTAS.name
                 }
 
                 2 -> {
-                    TypeInsuranceEnum.PETS.name
+                    TypeInsuranceEnum.TELEFONOS.name
                 }
 
                 3 -> {
-                    TypeInsuranceEnum.PHONE.name
+                    TypeInsuranceEnum.VIDA.name
                 }
 
                 else -> {
-                    TypeInsuranceEnum.PERSON.name
+                    TypeInsuranceEnum.AUTO.name
                 }
             }
         )
@@ -172,6 +172,7 @@ class DataPersonViewModel @Inject constructor() : ViewModel() {
         ) {
             goTakeInsurance.postValue(
                 DataForTakeInsurance(
+                    mPosition,
                     beneficiary,
                     direction,
                     cp,

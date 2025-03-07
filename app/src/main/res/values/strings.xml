@@ -4,6 +4,8 @@
     <string name="insurance">Póliza # </string>
     <string name="insurance_for">Póliza para: </string>
     <string name="protected_since">Protegido desde: </string>
+    <string name="select_date_start">Seleccionar fecha de inicio</string>
+    <string name="select_date_end">Seleccionar fecha de fin</string>
     <string name="protected_up_to">Hasta: </string>
     <string name="date_format">--/--/---- </string>
     <string name="cancel_insurance">Cancelar póliza</string>
@@ -18,6 +20,7 @@
     <string name="accept">Aceptar</string>
     <string name="cancel">Cancelar</string>
     <string name="close">Cerrar</string>
+    <string name="finish">Terminar</string>
 
     <string name="data_personal">Datos personales</string>
     <string name="beneficiary_name">Nombre del beneficiario</string>
@@ -47,6 +50,31 @@
     <string name="less_ten">"El #telefónico no puede ser menor a 10"</string>
 
     <string name="cancel_process_take_insurance">Al regresar perderás el proceso de contratación</string>
+
+    <string name="coverage">Coberturas</string>
+    <string name="exclusions">Exclusiones</string>
+    <string name="deductibles">Deducibles</string>
+    <string name="payments">Pagos</string>
+
+    <string name="clauses_auto_coverage">1.Resonsabilida Civil \n2.Daños materiales \n3.Robo total \n4.Gastos médicos a ocupantes \n5.Asistencia vial</string>
+    <string name="clauses_auto_exclusions">1.Conducir en estado de ebriedad o bajo drogas \n2.Participar en carreras o competencias ilegales</string>
+    <string name="clauses_auto_deductibles">1.Deducible por daños al auto: Entre el 3% y 10% del valor del vehículo. \n2.Deducible por robo total: Entre el 5% y 20% del valor comercial.</string>
+    <string name="clauses_auto_payments">1.Básico (solo responsabilidad civil): Desde $10 a $50 USD al mes. \n2.obertura amplia: Desde $30 a $150 USD al mes.</string>
+
+    <string name="clauses_life_coverage">1.Muerte accidental \n2.Invalidez total o permamente \n3.Enfermedades graves \n4.Devolución de primas</string>
+    <string name="clauses_life_exclusions">1.Suicidio \n2.Fallecimiento por actividades de alto riesgo \n3.Guerra o terrorismo</string>
+    <string name="clauses_life_deductibles">1.En seguros con ahorro o inversión, podrías pagar cargos administrativos o períodos de espera antes de obtener ciertos beneficios.</string>
+    <string name="clauses_life_payments">1.Seguro de vida permanente: Desde $50 a $300 USD al mes. \n2.Seguro con ahorro/inversión: Puede superar los $100 USD al mes.</string>
+
+    <string name="clauses_pets_coverage">1.Gastos veterinarios \n2.Medicamentos \n3.Exámenes y diagnósticos \n4.Robo o extravío</string>
+    <string name="clauses_pets_exclusions">1.Enfermedades preexistentes \n2.Procedimiento estéticos \n3.Mueste por edad avanzada</string>
+    <string name="clauses_pets_deductibles">1.Deducible por daño o robo: 10% a 30% del valor del celular. \n2.Puede variar según la marca y modelo.</string>
+    <string name="clauses_pets_payments">1.Costo mensual: Desde $5 a $25 USD al mes, dependiendo del modelo del celular y la cobertura.</string>
+
+    <string name="clauses_phone_coverage">1.Robo con violencia \n2.Daño accidental \n3.Daño por líquidos \n4.Fallas eléctricas \n5.Coberturas internacionales</string>
+    <string name="clauses_phone_exclusions">1.Robo sin violencia o extravío \n2.Daños por negligencia \n3.Reparaciones en lugares no autorizados</string>
+    <string name="clauses_phone_deductibles">Deducible por consulta o tratamiento: $10 a $50 USD por evento, o un porcentaje del total (5%-20%).</string>
+    <string name="clauses_phone_payments">1.Cobertura completa (consultas, cirugías, medicamentos, etc.): Desde $30 a $80 USD al mes.</string>
 
 
 </resources>

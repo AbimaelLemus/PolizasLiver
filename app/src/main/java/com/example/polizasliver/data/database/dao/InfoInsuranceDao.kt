@@ -13,7 +13,7 @@ interface InfoInsuranceDao {
     suspend fun getAllInfoInsurance(): List<InfoInsuranceEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertInfoInsurance(infoInsurance: List<InfoInsuranceEntity>)
+    suspend fun insertInfoInsurance(infoInsurance: InfoInsuranceEntity)
 
     @Query("DELETE FROM info_insurance WHERE no_insurance = :noInsurance" )
     suspend fun deleteInsurance(noInsurance:Double)

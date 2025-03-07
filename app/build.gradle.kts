@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.room.ktx)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
     kapt(libs.hilt.android.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

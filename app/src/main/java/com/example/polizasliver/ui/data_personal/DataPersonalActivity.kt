@@ -3,6 +3,7 @@ package com.example.polizasliver.ui.data_personal
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -14,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DataPersonalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDataPersonalBinding
+    val viewModel : DataPersonViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDataPersonalBinding.inflate(layoutInflater)

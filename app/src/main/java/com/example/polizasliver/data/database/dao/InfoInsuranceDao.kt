@@ -14,4 +14,7 @@ interface InfoInsuranceDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertInfoInsurance(infoInsurance: List<InfoInsuranceEntity>)
+
+    @Query("DELETE FROM info_insurance WHERE no_insurance = :noInsurance" )
+    suspend fun deleteInsurance(noInsurance:Double)
 }

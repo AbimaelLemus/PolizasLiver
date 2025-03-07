@@ -2,7 +2,6 @@ package com.example.polizasliver.ui.data_personal
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +11,7 @@ import com.example.polizasliver.R
 import com.example.polizasliver.data.model.Utils
 import com.example.polizasliver.databinding.ActivityDataPersonalBinding
 import com.example.polizasliver.ui.dialogs_alerts.DialogsAlerts
-import com.example.polizasliver.ui.insurance.TakeOutInsuranceActivity
+import com.example.polizasliver.ui.take_out_insurance.TakeOutInsuranceActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -60,7 +59,7 @@ class DataPersonalActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                DialogsAlerts().warningAlet(
+                DialogsAlerts().warningAlert(
                     this@DataPersonalActivity,
                     getString(R.string.cancel_process),
                     getString(R.string.cancel_process_take_insurance),

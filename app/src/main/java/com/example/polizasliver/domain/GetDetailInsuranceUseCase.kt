@@ -1,0 +1,14 @@
+package com.example.polizasliver.domain
+
+import com.example.polizasliver.data.InsuranceRepository
+import com.example.polizasliver.domain.model.InfoInsuranceItem
+import javax.inject.Inject
+
+class GetDetailInsuranceUseCase @Inject constructor(
+    private val repository: InsuranceRepository
+) {
+
+    suspend operator fun invoke(noInsurance: String): InfoInsuranceItem =
+        repository.getDetailInsurance(noInsurance)
+
+}

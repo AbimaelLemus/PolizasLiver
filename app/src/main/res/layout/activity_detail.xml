@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.detail.DetailActivity">
 
+    <ProgressBar
+        android:id="@+id/pgDetailInsurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,7 +70,6 @@
             android:id="@+id/ivDetailIconInsurance"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/pets"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,8 +94,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/date_format"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="@string/date_format" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -100,50 +108,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/date_format"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="@string/date_format" />
 
         </LinearLayout>
 
-        <include
-            android:id="@+id/iDetailCoverage"
-            layout="@layout/card_detail_insurance"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDetailInsurance"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llDetailDate" />
-
-        <include
-            android:id="@+id/iDetailExclude"
-            layout="@layout/card_detail_insurance"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iDetailCoverage" />
-
-        <include
-            android:id="@+id/iDetailDeduct"
-            layout="@layout/card_detail_insurance"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iDetailExclude" />
+            app:layout_constraintTop_toBottomOf="@+id/llDetailDate"
+            tools:itemCount="2"
+            tools:listitem="@layout/card_detail_insurance" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnDetailCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:background="@drawable/shape_border_red"
         android:text="@string/cancel_insurance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

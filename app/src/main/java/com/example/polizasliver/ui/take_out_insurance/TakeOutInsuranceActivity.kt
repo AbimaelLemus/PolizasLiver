@@ -1,4 +1,4 @@
-package com.example.polizasliver.ui.insurance
+package com.example.polizasliver.ui.take_out_insurance
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -56,7 +56,7 @@ class TakeOutInsuranceActivity : AppCompatActivity(), TypesInsuranceActives {
 
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                DialogsAlerts().warningAlet(
+                DialogsAlerts().warningAlert(
                     this@TakeOutInsuranceActivity,
                     getString(R.string.cancel_process),
                     getString(R.string.cancel_process_take_insurance),

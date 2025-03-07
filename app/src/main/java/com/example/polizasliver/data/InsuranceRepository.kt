@@ -18,8 +18,13 @@ class InsuranceRepository @Inject constructor(
         insuranceDao.insertInfoInsurance(infoInsurance)
     }
 
-    suspend fun clearInfoInsurance(noInsurance: Double) {
-        insuranceDao.deleteInsurance(noInsurance)
+    suspend fun getDetailInsurance(noInsurance: String): InfoInsuranceItem {
+        val response = insuranceDao.getDetailInsurance(noInsurance)
+        return response.toDomain()
     }
+
+    suspend fun deleteInsurance(noInsurance: String): Int =
+        insuranceDao.deleteInsurance(noInsurance)
+
 
 }

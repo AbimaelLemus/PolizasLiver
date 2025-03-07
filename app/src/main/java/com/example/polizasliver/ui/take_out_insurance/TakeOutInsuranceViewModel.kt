@@ -1,4 +1,4 @@
-package com.example.polizasliver.ui.insurance
+package com.example.polizasliver.ui.take_out_insurance
 
 import android.content.Context
 import android.util.Log

@@ -29,33 +29,9 @@ class DialogsAlerts() {
         }
 
         dialogSuccess.show()
-
-
     }
 
-    fun typeInsuranceDialog(context: Context, callback: ((typeinsurance: String) -> Unit)) {
-        /*DialogsAlerts().typeInsuranceDialog(this@HomeInsuranceActivity) { typeinsurance ->
-            Log.e(TAG, "onCreate: $typeinsurance")
-        }*/
-        val binding: DialogSuccessBinding =
-            DialogSuccessBinding.inflate(LayoutInflater.from(context))
-        var dialogSuccess = Dialog(context)
-        dialogSuccess.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialogSuccess.setCancelable(false)
-        dialogSuccess.setContentView(binding.root)
-        dialogSuccess.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-
-        binding.btnDialogSuccess.setOnClickListener {
-            dialogSuccess.dismiss()
-            callback("algo")
-        }
-
-        dialogSuccess.show()
-
-
-    }
-
-    fun warningAlet(
+    fun warningAlert(
         context: Context,
         tittle: String,
         message: String,
@@ -83,8 +59,27 @@ class DialogsAlerts() {
             warningAlert.dismiss()
         }
         warningAlert.show()
+    }
 
 
+    fun alertWithouNegative(
+        context: Context,
+        tittle: String,
+        message: String,
+        cancelable: Boolean,
+        buttomPositive: String
+    ) {
+        val warningAlert = AlertDialog.Builder(context).create()
+        warningAlert.setTitle(tittle)
+        warningAlert.setMessage(message)
+        warningAlert.setCancelable(cancelable)
+        warningAlert.setButton(
+            AlertDialog.BUTTON_POSITIVE,
+            buttomPositive
+        ) { dialog, which ->
+            warningAlert.dismiss()
+        }
+        warningAlert.show()
     }
 
     fun infoAlert(
@@ -115,8 +110,6 @@ class DialogsAlerts() {
             warningAlert.dismiss()
         }
         warningAlert.show()
-
-
     }
 
 

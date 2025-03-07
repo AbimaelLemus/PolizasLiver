@@ -17,7 +17,7 @@
             android:name=".ui.data_personal.DataPersonalActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.insurance.TakeOutInsuranceActivity"
+            android:name=".ui.take_out_insurance.TakeOutInsuranceActivity"
             android:exported="false" />
         <activity
             android:name=".ui.type_insurance.TypeInsuranceActivity"

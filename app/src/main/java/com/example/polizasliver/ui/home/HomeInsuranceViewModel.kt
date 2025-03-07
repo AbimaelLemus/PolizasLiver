@@ -15,7 +15,7 @@ class HomeInsuranceViewModel @Inject constructor(
     private val getAllInfoInsurance: GetAllInfoInsuranceUseCase
 ) : ViewModel() {
 
-    val infoInsuranceItem = MutableLiveData<List<InfoInsuranceItem>?>()
+    val infoInsurances = MutableLiveData<List<InfoInsuranceItem>?>()
     val isLoading = MutableLiveData<Boolean>()
     val insuranceNull = MutableLiveData<Boolean>()
     private val TAG = HomeInsuranceViewModel::class.java.simpleName
@@ -26,7 +26,7 @@ class HomeInsuranceViewModel @Inject constructor(
             val result = getAllInfoInsurance()
             Log.e(TAG, "onCreate: size:${result?.size}")
             if (result != null) {
-                infoInsuranceItem.postValue(result)
+                infoInsurances.postValue(result)
                 insuranceNull.postValue(false)
             } else {
                 insuranceNull.postValue(true)

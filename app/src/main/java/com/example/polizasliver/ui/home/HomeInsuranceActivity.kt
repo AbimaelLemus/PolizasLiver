@@ -8,14 +8,17 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityHomeInsuranceBinding
+import com.example.polizasliver.domain.model.InfoInsuranceItem
+import com.example.polizasliver.ui.adapter.HomeInsuranceAdapter
 import com.example.polizasliver.ui.detail.DetailActivity
 import com.example.polizasliver.ui.type_insurance.TypeInsuranceActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeInsuranceActivity : AppCompatActivity() {
+class HomeInsuranceActivity : AppCompatActivity(), InfoInsuranceInterface {
     private lateinit var binding: ActivityHomeInsuranceBinding
     val viewModel: HomeInsuranceViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,15 +34,11 @@ class HomeInsuranceActivity : AppCompatActivity() {
 
         viewModel.onCreate()
         observers()
+        binding.rvHomeinsurance.layoutManager = LinearLayoutManager(this)
 
         binding.fabHome.setOnClickListener {
             startActivity(Intent(this@HomeInsuranceActivity, TypeInsuranceActivity::class.java))
         }
-
-        binding.iHome.cvHome.setOnClickListener {
-            startActivity(Intent(this@HomeInsuranceActivity, DetailActivity::class.java))
-        }
-
     }
 
     private fun observers() {
@@ -54,11 +53,22 @@ class HomeInsuranceActivity : AppCompatActivity() {
         viewModel.insuranceNull.observe(this) { isNull ->
             if (isNull) {
                 binding.tvHomeNotInsurance.visibility = View.VISIBLE
-                binding.iHome.root.visibility = View.INVISIBLE
             } else {
                 binding.tvHomeNotInsurance.visibility = View.INVISIBLE
-                binding.iHome.root.visibility = View.VISIBLE
             }
         }
+        viewModel.infoInsurances.observe(this) { listInfoInsurance ->
+            if (listInfoInsurance != null) {
+                binding.rvHomeinsurance.adapter =
+                    HomeInsuranceAdapter(listInfoInsurance, this)
+            }
+        }
+    }
+
+    override fun infoInsurance(noInsurance: String) {
+        val intent = Intent(this@HomeInsuranceActivity, DetailActivity::class.java)
+        intent.putExtra("KEY_NO_INSURANCE", noInsurance)
+        startActivity(intent)
+
     }
 }

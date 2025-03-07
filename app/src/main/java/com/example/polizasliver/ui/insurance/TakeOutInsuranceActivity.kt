@@ -88,7 +88,6 @@ class TakeOutInsuranceActivity : AppCompatActivity(), TypesInsuranceActives {
             val sdf = SimpleDateFormat("HHmmss", Locale("es", "ES"))
             sdf.timeZone = TimeZone.getTimeZone("UTC+1")
             val currentdate = sdf.format(Date())
-            Log.d("fechaactual:", currentdate)
             val nameInsurance = viewModel.getEnum(mPosition.toInt())
 
             val info = InfoInsuranceItem(

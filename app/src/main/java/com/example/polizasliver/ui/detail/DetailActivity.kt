@@ -1,6 +1,7 @@
 package com.example.polizasliver.ui.detail
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    val viewModel : DetailViewModel by viewModels()
+    val viewModel: DetailViewModel by viewModels()
+    private val TAG = DetailActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,5 +26,8 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val noInsurance = intent.getStringExtra("KEY_NO_INSURANCE").orEmpty()
+        Log.e(TAG, "onCreate: $noInsurance")
     }
 }

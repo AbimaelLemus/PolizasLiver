@@ -7,41 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.type_insurance.TypeInsuranceActivity">
 
-    <LinearLayout
-        android:id="@+id/llTypeInsurance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <include layout="@layout/card_type_insurance" />
-            <include layout="@layout/card_type_insurance" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <include layout="@layout/card_type_insurance" />
-            <include layout="@layout/card_type_insurance" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTypeInsurance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/pink"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

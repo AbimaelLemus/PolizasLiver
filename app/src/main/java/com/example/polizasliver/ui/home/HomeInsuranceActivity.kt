@@ -8,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.transition.Visibility
 import com.example.polizasliver.R
 import com.example.polizasliver.databinding.ActivityHomeInsuranceBinding
 import com.example.polizasliver.ui.detail.DetailActivity

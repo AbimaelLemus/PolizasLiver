@@ -25,4 +25,14 @@
     <string name="phone">Teléfono</string>
     <string name="emergency_contacto">Contacto en caso de emergencia</string>
     <string name="emergency_phone">Teléfono en caso de emergencia</string>
+
+    <string name="life_insurance">Seguro de vida</string>
+    <string name="auto_insurance">Seguro para auto</string>
+    <string name="phone_insurance">Seguro para teléfono</string>
+    <string name="pets_insurance">Seguro para mascotas</string>
+
+    <string name="desc_life_insurance">El seguro de vida o seguro sobre la vida, cubre los riesgos que puedan afectar a la existencia, integridad o salud de las personas</string>
+    <string name="desc_auto_insurance">El seguro de auto es un contrato que protege al conductor, a sus acompañantes y al vehículo de los riesgos que implica conducir. </string>
+    <string name="desc_pets_insurance">El seguro veterinario o seguro de salud para mascotas, es un tipo de seguro de salud, orientado a mascotas y otros animales domésticos</string>
+    <string name="desc_phone_insurance">El seguro de teléfono móvil cubre el coste de reemplazar o reparar su teléfono móvil si es robado, perdido o dañado .</string>
 </resources>

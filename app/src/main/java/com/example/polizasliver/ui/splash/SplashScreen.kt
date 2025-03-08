@@ -22,7 +22,6 @@ class SplashScreen : AppCompatActivity(), SplashInterface {
 
         viewModel.goHome.observe(this) { go ->
             if (go) {
-                //FIXME: componer esto cuando ya se implemente dagger y se pueda injectar la interfaz en el MV
                 goHome()
             }
         }

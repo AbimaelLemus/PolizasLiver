@@ -1,7 +1,6 @@
 package com.example.polizasliver.ui.take_out_insurance
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,8 +22,8 @@ class TakeOutInsuranceViewModel @Inject constructor(
 
     val listTerms = MutableLiveData<List<TermsModel>>()
     val typeInsurance = MutableLiveData<String>()
-    val isLoading = MutableLiveData<Boolean>()
-    val showCongratulation = MutableLiveData<Boolean>()
+    val showCongratulation = MutableLiveData<InfoInsuranceItem>()
+    val accepTerms = MutableLiveData<Boolean>()
 
     var isDateStart: Boolean = false
     var isDateEnd: Boolean = false
@@ -42,38 +41,38 @@ class TakeOutInsuranceViewModel @Inject constructor(
         val desc: String
         when (position) {
             1 -> {
-                clausesCoverage = context.getString(R.string.clauses_auto_coverage)
-                clausesExclusions = context.getString(R.string.clauses_auto_exclusions)
-                clausesDeductibles = context.getString(R.string.clauses_auto_deductibles)
-                clausesPayments = context.getString(R.string.clauses_auto_payments)
-                desc = context.getString(R.string.desc_auto_insurance)
-                typeInsurance.postValue(TypeInsuranceEnum.MASCOTAS.name)
-            }
-
-            2 -> {
                 clausesCoverage = context.getString(R.string.clauses_pets_coverage)
                 clausesExclusions = context.getString(R.string.clauses_pets_exclusions)
                 clausesDeductibles = context.getString(R.string.clauses_pets_deductibles)
                 clausesPayments = context.getString(R.string.clauses_pets_payments)
                 desc = context.getString(R.string.desc_pets_insurance)
-                typeInsurance.postValue(TypeInsuranceEnum.TELEFONOS.name)
+                typeInsurance.postValue(TypeInsuranceEnum.MASCOTAS.name)
             }
 
-            3 -> {
+            2 -> {
                 clausesCoverage = context.getString(R.string.clauses_phone_coverage)
                 clausesExclusions = context.getString(R.string.clauses_phone_exclusions)
                 clausesDeductibles = context.getString(R.string.clauses_phone_deductibles)
                 clausesPayments = context.getString(R.string.clauses_phone_payments)
                 desc = context.getString(R.string.desc_phone_insurance)
-                typeInsurance.postValue(TypeInsuranceEnum.VIDA.name)
+                typeInsurance.postValue(TypeInsuranceEnum.TELEFONOS.name)
             }
 
-            else -> {
+            3 -> {
                 clausesCoverage = context.getString(R.string.clauses_life_coverage)
                 clausesExclusions = context.getString(R.string.clauses_life_exclusions)
                 clausesDeductibles = context.getString(R.string.clauses_life_deductibles)
                 clausesPayments = context.getString(R.string.clauses_life_payments)
                 desc = context.getString(R.string.desc_life_insurance)
+                typeInsurance.postValue(TypeInsuranceEnum.VIDA.name)
+            }
+
+            else -> {
+                clausesCoverage = context.getString(R.string.clauses_auto_coverage)
+                clausesExclusions = context.getString(R.string.clauses_auto_exclusions)
+                clausesDeductibles = context.getString(R.string.clauses_auto_deductibles)
+                clausesPayments = context.getString(R.string.clauses_auto_payments)
+                desc = context.getString(R.string.desc_auto_insurance)
                 typeInsurance.postValue(TypeInsuranceEnum.AUTO.name)
             }
         }
@@ -109,16 +108,12 @@ class TakeOutInsuranceViewModel @Inject constructor(
     }
 
     fun validate(info: InfoInsuranceItem) {
-        isLoading.postValue(true)
         viewModelScope.launch {
             if (isDateStart && isDateEnd && isCoverage && isExclusions && isDeductibles && isPayments) {
-
-                val insert = insertInfo.invoke(info)
-                Log.e(TAG, "validate: $insert")
-                isLoading.postValue(false)
-                showCongratulation.postValue(true)
-            } else {
-                showCongratulation.postValue(false)
+                insertInfo.invoke(info)
+                showCongratulation.postValue(info)
+            }else{
+                accepTerms.postValue(true)
             }
         }
     }

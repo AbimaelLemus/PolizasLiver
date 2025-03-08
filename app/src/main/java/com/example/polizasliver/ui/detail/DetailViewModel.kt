@@ -21,17 +21,14 @@ class DetailViewModel @Inject constructor(
 ) : ViewModel() {
 
     val infoInsurance = MutableLiveData<InfoInsuranceItem>()
-    val isLoading = MutableLiveData<Boolean>()
     val iconInsurance = MutableLiveData<Int>()
     val listTerms = MutableLiveData<List<TermsModel>>()
     val deleteInsurance = MutableLiveData<String>()
 
     fun inicialized(context: Context, noInsurance: String) {
-        isLoading.postValue(true)
         viewModelScope.launch {
             val result = getDetailUseCase.invoke(noInsurance)
             infoInsurance.postValue(result)
-            isLoading.postValue(false)
 
             val icon = if (result.nameInsurance == TypeInsuranceEnum.AUTO.name) {
                 R.drawable.car
@@ -84,7 +81,7 @@ class DetailViewModel @Inject constructor(
                 "C.P.:\n${result.cp}\n\n" +
                 "Teléfono:\n${result.phone}\n\n" +
                 "Contacto de emergencia:\n${result.emergencyContact}\n\n" +
-                "Telécono del contaco de emergencia:\n${result.emergencyPhone}"
+                "Teléfono del contaco de emergencia:\n${result.emergencyPhone}"
 
         listTerms.postValue(
             listOf(
@@ -116,13 +113,13 @@ class DetailViewModel @Inject constructor(
         )
     }
 
-    fun cancelInsurance(noInsurance: String) {
+    fun cancelInsurance(context: Context, noInsurance: String) {
         viewModelScope.launch {
             val isDelete = deleteInsuranceUseCase.invoke(noInsurance)
             val result = if (isDelete != 0) {
-                "Se elimino la póliza"
+                context.getString(R.string.cancelInsuranceSuccess)
             } else {
-                "No pudimos eliminar la póliza en este momento"
+                context.getString(R.string.cancelInsuranceError)
             }
             deleteInsurance.postValue(result)
         }

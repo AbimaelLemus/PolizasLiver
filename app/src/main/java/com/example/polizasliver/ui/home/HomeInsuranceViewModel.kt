@@ -1,6 +1,5 @@
 package com.example.polizasliver.ui.home
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -24,7 +23,6 @@ class HomeInsuranceViewModel @Inject constructor(
         isLoading.postValue(true)
         viewModelScope.launch {
             val result = getAllInfoInsurance()
-            Log.e(TAG, "onCreate: size:${result?.size}")
             if (result != null) {
                 infoInsurances.postValue(result)
                 insuranceNull.postValue(false)

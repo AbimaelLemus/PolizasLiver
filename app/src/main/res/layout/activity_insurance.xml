@@ -9,16 +9,6 @@
     android:padding="16dp"
     tools:context=".ui.take_out_insurance.TakeOutInsuranceActivity">
 
-    <ProgressBar
-        android:id="@+id/pbTakeOutInsurance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
     <TextView
         android:id="@+id/tvInsuranceTittle"
         android:layout_width="match_parent"

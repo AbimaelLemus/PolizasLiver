@@ -18,7 +18,9 @@ data class InfoInsuranceEntity(
     @ColumnInfo(name = "cp") val cp: String,
     @ColumnInfo(name = "phone") val phone: String,
     @ColumnInfo(name = "emergency_contact") val emergency_contact: String,
-    @ColumnInfo(name = "emergency_phone") val emergency_phone: String
+    @ColumnInfo(name = "emergency_phone") val emergency_phone: String,
+    @ColumnInfo(name = "date_start") val date_start: String,
+    @ColumnInfo(name = "date_end") val date_end: String
 )
 
 fun InfoInsuranceItem.toDatabase() = InfoInsuranceEntity(
@@ -30,5 +32,7 @@ fun InfoInsuranceItem.toDatabase() = InfoInsuranceEntity(
     cp = cp,
     phone = phone,
     emergency_contact = emergencyContact,
-    emergency_phone = emergencyPhone
+    emergency_phone = emergencyPhone,
+    date_start = dateStart,
+    date_end = dateEnd
 )

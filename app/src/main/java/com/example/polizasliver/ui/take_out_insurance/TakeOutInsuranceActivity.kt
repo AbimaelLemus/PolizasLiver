@@ -3,8 +3,7 @@ package com.example.polizasliver.ui.take_out_insurance
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -48,8 +47,6 @@ class TakeOutInsuranceActivity : AppCompatActivity(), TypesInsuranceActives {
         val mBeneficiary = intent.getStringExtra("KEY_BENEFICIARY").orEmpty()
         binding.tvTakeOutInsuranceName.text = mBeneficiary
 
-        Log.e(TAG, "onCreate: mPosition:$mPosition mBeneficiary:$mBeneficiary")
-
         binding.rvTakeOurInsurance.layoutManager =
             LinearLayoutManager(this@TakeOutInsuranceActivity)
         myObservers()
@@ -84,6 +81,8 @@ class TakeOutInsuranceActivity : AppCompatActivity(), TypesInsuranceActives {
             val mEName = intent.getStringExtra("KEY_ENAME").orEmpty()
             val mEPhone = intent.getStringExtra("KEY_EPHONE").orEmpty()
 
+            val dateStart = binding.tvInsuranceProtectedSince.text.toString()
+            val dateEnd = binding.tvInsuranceProtectedUpTo.text.toString()
 
             val sdf = SimpleDateFormat("HHmmss", Locale("es", "ES"))
             sdf.timeZone = TimeZone.getTimeZone("UTC+1")
@@ -91,14 +90,16 @@ class TakeOutInsuranceActivity : AppCompatActivity(), TypesInsuranceActives {
             val nameInsurance = viewModel.getEnum(mPosition.toInt())
 
             val info = InfoInsuranceItem(
-                currentdate,
-                nameInsurance,
-                mBeneficiary,
-                mDirection,
-                mCP,
-                mPhone,
-                mEName,
-                mEPhone
+                noInsurance = currentdate,
+                nameInsurance = nameInsurance,
+                clientsName = mBeneficiary,
+                direction = mDirection,
+                cp = mCP,
+                phone = mPhone,
+                emergencyContact = mEName,
+                emergencyPhone = mEPhone,
+                dateStart = dateStart,
+                dateEnd = dateEnd
             )
 
             viewModel.validate(info)
@@ -156,25 +157,27 @@ class TakeOutInsuranceActivity : AppCompatActivity(), TypesInsuranceActives {
         viewModel.typeInsurance.observe(this) { typeInsurance ->
             binding.tvInsuranceTittle.text = typeInsurance
         }
-        viewModel.isLoading.observe(this) { isLoading ->
-            if (isLoading) {
-                binding.pbTakeOutInsurance.visibility = View.VISIBLE
-            } else {
+        viewModel.showCongratulation.observe(this) { infoInsurance ->
+            DialogsAlerts().succesDialog(
+                this@TakeOutInsuranceActivity,
+                infoInsurance.noInsurance,
+                infoInsurance.clientsName
+            ) {
+                val intent =
+                    Intent(this@TakeOutInsuranceActivity, HomeInsuranceActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish()
+            }
 
-                binding.pbTakeOutInsurance.visibility = View.INVISIBLE
-            }
         }
-        viewModel.showCongratulation.observe(this) { showCongratulation ->
-            if (showCongratulation) {
-                DialogsAlerts().succesDialog(this@TakeOutInsuranceActivity) {
-                    val intent =
-                        Intent(this@TakeOutInsuranceActivity, HomeInsuranceActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(intent)
-                    finish()
-                }
-            }
+        viewModel.accepTerms.observe(this) {
+            Toast.makeText(
+                this@TakeOutInsuranceActivity,
+                getString(R.string.accept_terms),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 

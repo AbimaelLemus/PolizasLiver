@@ -11,17 +11,21 @@ data class InfoInsuranceItem(
     var cp: String,
     var phone: String,
     var emergencyContact: String,
-    var emergencyPhone: String
+    var emergencyPhone: String,
+    var dateStart: String,
+    var dateEnd: String
 )
 
 fun InfoInsuranceEntity.toDomain() = InfoInsuranceItem(
-    no_insurance,
-    name_insurance,
+    noInsurance = no_insurance,
+    nameInsurance = name_insurance,
 
-    clients_name,
-    direction,
-    cp,
-    phone,
-    emergency_contact,
-    emergency_phone
+    clientsName = clients_name,
+    direction = direction,
+    cp = cp,
+    phone = phone,
+    emergencyContact = emergency_contact,
+    emergencyPhone = emergency_phone,
+    dateStart = date_start,
+    dateEnd = date_end
 )

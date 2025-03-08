@@ -35,7 +35,6 @@ class DetailActivity : AppCompatActivity() {
         }
         val noInsurance = intent.getStringExtra("KEY_NO_INSURANCE").orEmpty()
         viewModel.inicialized(this@DetailActivity, noInsurance)
-        Log.e(TAG, "onCreate: $noInsurance")
 
         binding.rvDetailInsurance.layoutManager = LinearLayoutManager(this)
 
@@ -51,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
                 getString(R.string.cancel)
             ) {
                 val noInsurance = intent.getStringExtra("KEY_NO_INSURANCE").orEmpty()
-                viewModel.cancelInsurance(noInsurance)
+                viewModel.cancelInsurance(this@DetailActivity, noInsurance)
 
             }
         }
@@ -59,18 +58,11 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun myObservers() {
-        viewModel.isLoading.observe(this) { showLoading ->
-            if (showLoading) {
-                binding.pgDetailInsurance.visibility = View.VISIBLE
-            } else {
-                binding.pgDetailInsurance.visibility = View.INVISIBLE
-            }
-        }
-
         viewModel.infoInsurance.observe(this) { infoInsurance ->
             binding.tvDetailName.text = infoInsurance.clientsName
             binding.tvDetailNoInsurance.text = infoInsurance.noInsurance
-            //binding.tvDetailProtectedSince.text = infoInsurance.
+            binding.tvDetailProtectedSince.text = infoInsurance.dateStart
+            binding.tvDetailProtectedUpTo.text = infoInsurance.dateEnd
 
         }
 

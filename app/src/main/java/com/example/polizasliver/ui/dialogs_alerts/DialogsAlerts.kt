@@ -13,6 +13,8 @@ class DialogsAlerts() {
 
     fun succesDialog(
         context: Context,
+        noInsurance: String,
+        clientName: String,
         callback: (() -> Unit)
     ) {
         val binding: DialogSuccessBinding =
@@ -22,6 +24,9 @@ class DialogsAlerts() {
         dialogSuccess.setCancelable(false)
         dialogSuccess.setContentView(binding.root)
         dialogSuccess.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+
+        binding.dialogSuccessNoInsurance.text = noInsurance
+        binding.tvDialogSuccessName.text = clientName
 
         binding.btnDialogSuccess.setOnClickListener {
             callback.invoke()
